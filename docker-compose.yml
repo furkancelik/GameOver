@@ -1,0 +1,13 @@
+version: "3"
+services:
+  gmover:
+    build:
+      context: .
+    working_dir: /usr/src/gmover
+    volumes:
+      - .:/usr/src/gmover
+      - /usr/src/gmover/node_modules
+      - /usr/src/gmover/.next
+    network_mode: "host"
+    environment:
+      - NODE_ENV=production
